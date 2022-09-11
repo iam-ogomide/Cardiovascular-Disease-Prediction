@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN PAGE</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+ul{
+    list-style:  none;
+}
+
+ul li{
+    padding: 5px;
+    background: #f4f4f4;
+    margin: 5px 0;
+}
+
+header{
+    background: #f4f4f4;
+    padding: 1rem;
+    text-align: center;
+}
+
+.container{
+    margin: auto;
+    width: 500px;
+    overflow: auto;
+    padding :3rem 2rem;
+
+}
+#my-form{
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+#my-form label{
+    display: block;
+
+}
+#my-form input[type='text']{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin:5px 0;
+}
+
+.btn:hover{
+    background: #444;
+}
+
+.bg-dark{
+    background: #333;
+    color: #fff;
+}
+
+.error{
+    background: orangered;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Cardiovascular disease Prediction</h1>
+    </header>
+
+    <section class="container">
+        <form id="my-form" action="{{ url_for('predict')}}"method="post">
+            <h1>Take Your Test</h1>
+            <div class="msg"></div>
+            <div>
+                <label>Age:</label>
+                <input type="text" class="form-input" name="age">
+            </div>
+            <div>
+                <label>Sex:</label>
+                <input type="text" class="form-input" name="sex">
+            </div>
+            <div>
+                <label>Chest Pain Type:</label>
+                <input type="text" class="form-input" name="cp">
+            </div>
+            <div>
+                <label>Resting Blood Pressure:</label>
+                <input type="text" class="form-input" name="trestbps">
+            </div>
+            <div>
+                <label>Cholesterol Level:</label>
+                <input type="text" class="form-input" name="chol">
+            </div>
+            <div>
+                <label>Fating Blood Sugar:</label>
+                <input type="text" class="form-input" name="fbs">
+            </div>
+            <div>
+                <label>Electrocardiographic Results:</label>
+                <input type="text" class="form-input" name="restecg">
+            </div>
+            <div>
+                <label>Maximum Heart Rate:</label>
+                <input type="text" class="form-input" name="thalach">
+            </div>
+            <div>
+                <label>Exercise induced angina:</label>
+                <input type="text" class="form-input" name="exang">
+            </div>
+            <div>
+                <label>ST_Depression:</label>
+                <input type="text" class="form-input" name="oldpeak">
+            </div>
+            <div>
+                <label>ST_slope:</label>
+                <input type="text" class="form-input" name="slope">
+            </div>
+            <div>
+                <label>Major Vessel:</label>
+                <input type="text" class="form-input" name="ca">
+            </div>
+            <div>
+                <label for="name">stress results:</label>
+                <input type="text" class="form-input" name="thal">
+            </div>
+            <input class="btn" type="submit" value="Predict">
+        </form>
+
+        <ul id="users"></ul>
+    </section>
+
+    
+</body>
+</html>
